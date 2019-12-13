@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import cn.edu.hqu.javaee.ex2.domain.User;
 
 /**
- * UserController ÊÇÒ»¸ö»ùÓÚ×¢½âµÄ¿ØÖÆÆ÷
- * ¿ÉÒÔÍ¬Ê±´¦Àí¶à¸öÇëÇó¶¯×÷
+ * UserController æ˜¯ä¸€ä¸ªåŸºäºæ³¨è§£çš„æ§åˆ¶å™¨
+ * å¯ä»¥åŒæ—¶å¤„ç†å¤šä¸ªè¯·æ±‚åŠ¨ä½œ
  */
 
 @SpringBootApplication(scanBasePackages = "cn.edu.hqu.javaee.web.controller")
@@ -23,15 +23,12 @@ public class UserController {
 	}
 
     /**
-    * RequestMapping ÓÃÀ´Ó³ÉäÒ»¸öÇëÇóºÍÇëÇóµÄ·½·¨
-    * value="/register" ±íÊ¾ÇëÇóÓÉ register ·½·¨½øĞĞ´¦Àí
+    * RequestMapping ç”¨æ¥æ˜ å°„ä¸€ä¸ªè¯·æ±‚å’Œè¯·æ±‚çš„æ–¹æ³•
+    * value="/register" è¡¨ç¤ºè¯·æ±‚ç”± register æ–¹æ³•è¿›è¡Œå¤„ç†
     */
     @RequestMapping(value="/register")
-    public String Register(@ModelAttribute("form") User user, Model model) {  // user:ÊÓÍ¼²ã´«¸ø¿ØÖÆ²ãµÄ±íµ¥¶ÔÏó£»model£º¿ØÖÆ²ã·µ»Ø¸øÊÓÍ¼²ãµÄ¶ÔÏó
-        // ÔÚ model ÖĞÌí¼ÓÒ»¸öÃûÎª "user" µÄ user ¶ÔÏó
-        model.addAttribute("user", user);
-        
-        // ·µ»ØÒ»¸ö×Ö·û´® " success" ×÷ÎªÊÓÍ¼Ãû³Æ
+    public String Register(@ModelAttribute("form") User user, Model model) {  
+	model.addAttribute("user", user);
         return "/success.html";
     }
 }
